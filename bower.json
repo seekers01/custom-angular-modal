@@ -1,0 +1,22 @@
+{
+  "name": "Custom Angular Modal",
+  "version": "v0.0.1",
+  "author": "Sushant Suman<seekers01@gmail.com>",
+  "description": "Custom Modal as an angular directive",
+  "main": [
+    "directive.js",
+    "modal-template.html",
+    "style.css"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": "1.5.7"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular based Custom Modal</title>
+    <script type="text/javascript" src="../lib/angular/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../directive/style.css" />
+    <script type="text/javascript" src="../directive/directive.js"></script>
+
+</head>
+<body ng-app="ExampleApp" ng-controller="ExampleCtrl">
+    <div ng-click="toggleModal1()">Click here to invoke inline modal. Input from modal: {{sharedScope.testInput1}}</div>
+    <div ng-click="toggleModal2()">Click here to invoke modal from external html file. Input from modal: {{sharedScope.testInput2}}</div>
+
+    <custom-modal class="template-modal modal-lg" custom-modal-show="showModal1" sharedScope="sharedScope">
+        <h3>You can choose to load modal content from inline html</h3>
+        <h3 ng-click="parentFunction()">Call Parent Function</h3>
+        <input ng-model="sharedScope.testInput1" placeholder="Enter some text" maxlength="50"/>
+    </custom-modal>
+
+    <custom-modal class="template-modal modal-lg" custom-modal-show="showModal2" sharedScope="sharedScope">
+        <div ng-include="'modal-content.html'" ng-controller="ModalCtrl2"></div>
+    </custom-modal>
+
+</body>
+</html>
